@@ -1,0 +1,58 @@
+.titreGames{
+  padding-top: 90px;
+  font-size: 50px;
+  font-weight: 300;
+  padding-left: 260px;
+  padding-bottom: 50px;
+}
+.flexAccueil{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding-left: 260px;
+}
+.carteStream{
+height: 420px;
+width: 320px;
+margin: 0 30px 30px 0;
+transition: all 0.4s;
+border-radius: 10px;
+box-shadow: 2px 11px 36px -16px rgba(0,0,0,0.75);
+}
+.carteStream:hover{
+  transform: translateY(-5px);
+}
+.titreCarteStream{
+font-size: 21px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+width: 80%;
+font-weight: 500;
+
+}
+.textStream{
+  font-weight: 500;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cardBodyStream{
+  height: 180px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.viewers{
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 599px) {
+  .carteStream{
+    margin: 0 0 30px 0;
+  }
+}

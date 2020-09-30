@@ -9,9 +9,11 @@ const Games = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      //on fait appel a l'api Twitch
       const result = await api.get('https://api.twitch.tv/helix/games/top');
-      console.log(result);
+      // console.log(result);
 
+      //On va changer la valeur de {width} et {height} fournis dans l'URL de twitch.
       const arrayData = result.data.data;
       const finalArray = arrayData.map((game) => {
         const newUrl = game.box_art_url
@@ -22,10 +24,11 @@ const Games = () => {
       });
 
       setGames(finalArray);
+      //On passe a Games le contenu de l'objet
     };
     fetchData();
   }, []);
-  console.log(games);
+  // console.log(games);
 
   return (
     <div>

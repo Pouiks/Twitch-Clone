@@ -11,10 +11,13 @@
   display: flex;
   align-items: center;
   width: 100%;
-}
-
-.liensNav{
   list-style-type: none;
+}
+.lien{
+  color: white;
+}
+.liensNav{
+
   padding: 0 20px;
 }
 .liensNav:nth-child(4){
