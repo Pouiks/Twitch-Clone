@@ -82,7 +82,7 @@ const TopStreams = () => {
 
               <p className="textStream viewers">{channel.viewer_count}</p>
               <Link className="lien" to={{ pathname: `/live/${channel.login}` }}>
-              <div className="btnCarte">Regarder {channel.user_name}</div>
+                <div className="btnCarte">Regarder {channel.user_name}</div>
               </Link>
             </div>
 

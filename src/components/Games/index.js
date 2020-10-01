@@ -3,17 +3,20 @@ import regeneratorRuntime from 'regenerator-runtime';
 import React, { useEffect, useState } from 'react';
 import api from 'src/api';
 import './games.scss';
+import { Link } from 'react-router-dom';
+
+
 
 const Games = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      //on fait appel a l'api Twitch
+      // on fait appel a l'api Twitch
       const result = await api.get('https://api.twitch.tv/helix/games/top');
       // console.log(result);
 
-      //On va changer la valeur de {width} et {height} fournis dans l'URL de twitch.
+      // On va changer la valeur de {width} et {height} fournis dans l'URL de twitch.
       const arrayData = result.data.data;
       const finalArray = arrayData.map((game) => {
         const newUrl = game.box_art_url
@@ -24,7 +27,7 @@ const Games = () => {
       });
 
       setGames(finalArray);
-      //On passe a Games le contenu de l'objet
+      // On passe a Games le contenu de l'objet
     };
     fetchData();
   }, []);
@@ -43,7 +46,19 @@ const Games = () => {
             <img src={game.box_art_url} alt="Jeux profil pic" className="imageCarte" />
             <div className="cardBodyGames">
               <h5 className="titreCartesGames">{game.name}</h5>
-              <div className="btnCarte">Regarder {game.name}</div>
+
+              <Link
+                className="lien"
+                to={{
+                  pathname: `game/${game.name}`,
+                  state: {
+                    gameID: game.id,
+                  },
+                }}
+              >
+                <div className="btnCarte">Regarder {game.name}</div>
+              </Link>
+
             </div>
           </div>
         ))}
