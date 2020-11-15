@@ -63,7 +63,7 @@ const GameStreams = () => {
       {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
       <h1 className="titreGamesStreams">Stream : {slug}</h1>
       <h3 className="sousTitregamesStreams">
-         Viewers :<strong className="textColored"> {viewers} </strong> personnes regardent {slug} .
+        Viewers :<strong className="textColored"> {viewers} </strong> personnes regardent {slug} .
       </h3>
 
       <div className="flexAccueil">
